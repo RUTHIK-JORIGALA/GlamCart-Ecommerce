@@ -53,19 +53,19 @@ const CartModel = ({ products, isOpen, onClose}) => {
 
                                         <div className='flex flex-row md:justify-start justify-end items-center mt-2'>
                                             <button
-                                                onClick={() => handleQuantity('decrement', item.id)}
+                                                onClick={() => handleQuantity('decrement', item._id)}
                                                 className='size-6 flex items-center justify-center px-1 rounded-full bg-gray-200 text-gray-700 hover:bg-primary hover:text-white ml-8'
                                             >-</button>
                                             <span className='px-1 text-center mx-1'>{item.quantity}</span>
                                             <button
-                                                onClick={() => handleQuantity('increment', item.id)}
+                                                onClick={() => handleQuantity('increment', item._id)}
                                                 className='size-6 flex items-center justify-center px-1 rounded-full bg-gray-200 text-gray-700 hover:bg-primary hover:text-white '
                                             >+</button>
                                             
                                         </div>
                                         <div className='ml-3'>
                                             <button
-                                                onClick={(e)=> handleRemove(e, item.id)}
+                                                onClick={(e)=> handleRemove(e, item._id)}
                                                 className='text-red-500 hover:text-red-800 text-sm'
                                             >
                                                 Remove
