@@ -14,17 +14,27 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
+const allowedOrigins = ['http://localhost:5173', 'https://glamcart.vercel.app'];
+
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
-}))
+  origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+          callback(null, true);
+      } else {
+          callback(new Error('Not allowed by CORS'));
+      }
+  },
+  credentials: true
+}));
 
 // all routes
 const authRoutes = require('./src/users/user.route');
 const productRoutes = require('./src/products/products.route');
+const reviewRoutes = require('./src/reviews/reviews.router');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes)
+app.use('/api/reviews', reviewRoutes)
 
 main()
     .then(()=>{

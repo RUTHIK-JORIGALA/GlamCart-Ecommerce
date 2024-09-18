@@ -11,7 +11,7 @@ const TrendingProducts = () => {
   return (
     <section className='section__container product__container'>
       <h2 className='section__header'>Trending Products</h2>
-      <p className='section__subheader'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, ad eius! Et voluptatibus nam fugiat nostrum ex, harum reprehenderit eligendi reiciendis iste necessitatibus ad obcaecati qui quaerat eum magni accusamus?</p>
+      <p className='section__subheader'>Accessories are playing a significant role in elevating outfits. Look for bold jewelry, oversized bags, and unique eyewear to add personality to your look</p>
 
       {/* products card */}
       <div className='mt-12'>

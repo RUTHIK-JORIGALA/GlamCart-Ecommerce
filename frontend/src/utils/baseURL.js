@@ -1,3 +1,4 @@
 export const getBaseUrl = () =>{
-    return "http://localhost:3000"
+    return "https://glamcart-backend.onrender.com"
+    // return "http://localhost:10000"
 }

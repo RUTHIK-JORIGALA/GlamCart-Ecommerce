@@ -15,6 +15,7 @@ const filters = {
     ]
 }
 
+
 const ShopPage = () => {
     
     const [filtersState, setFiltersState] = useState({
@@ -46,8 +47,15 @@ const ShopPage = () => {
             color: 'all',
             priceRange: ''
         })
+        setCurrentPage(1)
     }
 
+
+    useEffect(()=>{
+        setCurrentPage(1)
+    }, [filtersState])
+
+    
     // handle page change
     const handlePageChange = (pageNumber) =>{
         if(pageNumber > 0 && pageNumber <= totalPages) {
@@ -56,7 +64,8 @@ const ShopPage = () => {
     }
 
     if(isLoading) return <div>Loading...</div>
-    if(error) return <div>Error loading products</div>
+    if(error) return <div>Error loading products. </div>
+    error?.console.log("Error occured - ", error);
 
     const startProduct = (currentPage -1) * ProductsPerPage + 1;
     const endProduct = startProduct + products.length -1;
