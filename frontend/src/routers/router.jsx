@@ -7,6 +7,8 @@ import ShopPage from "../pages/shop/ShopPage";
 import SingleProduct from "../pages/shop/productDetails/SingleProduct";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import ErrorPage from "../pages/ErrorPage";
+
 
 const router = createBrowserRouter([
     {
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
     {
       path: "register",
       element: <Register />
+    },
+    {
+      path: "*", 
+      element: <ErrorPage />, 
     }
     
 ]);

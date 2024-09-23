@@ -2,6 +2,7 @@ import React from 'react'
 import OrderSummary from './OrderSummary'
 import { useDispatch } from 'react-redux'
 import { removeFromCart, updateQuantity } from '../../redux/features/cart/cartSlice';
+import EmptyCart from '../../components/EmptyCart';
 
 const CartModel = ({ products, isOpen, onClose}) => {
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const CartModel = ({ products, isOpen, onClose}) => {
                 {/* cart details */}
                 <div className='cart-items'>
                     {
-                        products.length === 0 ? (<div>Your cart is empty</div>) : (
+                        products.length === 0 ? (<div className='p-10'><EmptyCart /><p className='py-10 text-lg text-center'>Your cart is empty</p></div>) : (
                             products.map((item, index) => (
                                 <div key={index} className='flex flex-col md:flex-row md:items-center md:justify-between shadow-md md:p-5 p-2 mb-4'>
                                     <div className='flex items-center'>
